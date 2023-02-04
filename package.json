@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
+    "build": "cross-env NODE_ENV=production next build",
+    "export": "cross-env NODE_ENV=production next export",
     "start": "next start",
     "lint": "next lint",
     "deploy.dev": "aws s3 cp out s3://petgpt-dev --recursive",
