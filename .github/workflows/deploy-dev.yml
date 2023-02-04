@@ -28,7 +28,7 @@ jobs:
         run: |
           export NODE_ENV=production
           export APP_ENV=staging
-          npm install -f
+          npm install
           npm run build
           npm run export
           npm run deploy.dev
