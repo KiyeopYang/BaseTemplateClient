@@ -11,11 +11,11 @@ jobs:
     name: 운영 배포
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '18.x'
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -28,8 +28,10 @@ jobs:
         run: |
           export NODE_ENV=production
           export APP_ENV=production
-          npm install -f
+          echo $NODE_ENV
+          echo $APP_ENV
+          npm install
           npm run build
           npm run export
-          npm run deploy.prod
-          npm run invalidate.prod
+          npm run deploy.dev
+          npm run invalidate.dev
