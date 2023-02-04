@@ -9,9 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "deploy.dev": "aws s3 cp out s3://petgpt-dev --recursive",
-    "invalidate.dev": "aws cloudfront create-invalidation --distribution-id EM6VEFBQSQ23Q --paths /*",
+    "invalidate.dev": "aws cloudfront create-invalidation --distribution-id EM6VEFBQSQ23Q --paths '/' '/*'",
     "deploy.prod": "aws s3 cp out s3://petgpt --recursive",
-    "invalidate.prod": "aws cloudfront create-invalidation --distribution-id E1NB22G4PHYP19 --paths /*"
+    "invalidate.prod": "aws cloudfront create-invalidation --distribution-id E1NB22G4PHYP19 --paths '/' '/*'"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
