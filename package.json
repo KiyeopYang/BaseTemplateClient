@@ -11,7 +11,7 @@
     "deploy.dev": "aws s3 cp out s3://petgpt-dev --recursive",
     "invalidate.dev": "aws cloudfront create-invalidation --distribution-id I22CZUL900ZO2Q --paths /*",
     "deploy.prod": "aws s3 cp out s3://petgpt --recursive",
-    "invalidate.prod": "aws cloudfront create-invalidation --distribution-id IOIXPEM3KS57J --paths /*"
+    "invalidate.prod": "aws cloudfront create-invalidation --distribution-id E1NB22G4PHYP19 --paths /*"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
