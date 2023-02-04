@@ -19,7 +19,7 @@ export default function Home() {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
+          {process.env.NEXT_PUBLIC_APP_ENV}
         </Typography>
         <Link href="/about" color="secondary">
           Go to the about page
