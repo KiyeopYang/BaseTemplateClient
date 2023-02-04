@@ -1,0 +1,35 @@
+name: 개발 배포
+
+# Run this workflow every time a new commit pushed to your repository
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deployment:
+    name: 개발 배포
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18.x'
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: npm install, build, export and deploy
+        run: |
+          export NODE_ENV=production
+          export APP_ENV=staging
+          npm install -f
+          npm run build
+          npm run export
+          npm run deploy.dev
+          npm run invalidate.dev
