@@ -36,5 +36,5 @@ jobs:
           npm install
           npm run build
           npm run export
-          npm run deploy.dev
-          npm run invalidate.dev
+          npm run deploy.prod
+          npm run invalidate.prod
