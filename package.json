@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "deploy.dev": "aws s3 cp out s3://petgpt-dev --recursive",
@@ -25,8 +26,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/eslint": "^8.21.0",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
     "eslint": "^8.33.0",
     "eslint-config-next": "^13.1.6",
     "typescript": "^4.9.5"
