@@ -1,15 +1,26 @@
 import { createTheme } from '@mui/material/styles';
-import type {} from '@mui/x-date-pickers/themeAugmentation';
-import type {} from '@mui/x-data-grid/themeAugmentation';
 
-// Create a theme instance.
+// const theme = extendTheme({
+//   components: {
+//     JoyChip: {
+//       defaultProps: {
+//         size: 'sm',
+//       },
+//       styleOverrides: {
+//         root: {
+//           borderRadius: '4px',
+//         },
+//       },
+//     },
+//   },
+// });
 export const Colors = {
   primary: {
-    500: '#444444',
-    400: '#555555',
-    300: '#666666',
-    200: '#777777',
-    100: '#888888',
+    500: '#4444FF',
+    400: '#7777FF',
+    300: '#AAAAFF',
+    200: '#CCCCFF',
+    100: '#EEEEFF',
   },
   secondary: {
     500: '#FF4444',
@@ -49,8 +60,6 @@ const theme = createTheme({
   typography: {
     fontFamily: [
       '-apple-system',
-      'BlinkMacSystemFont',
-      'Apple SD Gothic Neo',
       'Pretendard',
       'Roboto',
       'Noto Sans KR',
@@ -62,13 +71,5 @@ const theme = createTheme({
       'sans-serif',
     ].join(','),
   },
-  components: {
-    MuiDataGrid: {
-      styleOverrides: {
-        root: {},
-      },
-    },
-  },
 });
-
 export default theme;

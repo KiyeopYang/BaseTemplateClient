@@ -1,17 +1,23 @@
 import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import theme, { roboto } from '../src/theme';
+import theme from 'constants/theme';
 import createEmotionCache from '../src/createEmotionCache';
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className={roboto.className}>
+      <Html>
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="shortcut icon" href="/favicon.ico" />
+          <link
+            rel="stylesheet"
+            as="style"
+            crossOrigin="anonymous"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard-dynamic-subset.css"
+          />
           <meta name="emotion-insertion-point" content="" />
           {(this.props as any).emotionStyleTags}
         </Head>

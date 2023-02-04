@@ -8,7 +8,7 @@ interface Context {
   setLocale: (locale: Locales) => void;
 }
 export const LocalizationContext = createContext<Context>({
-  t: () => '',
+  t: () => 'TEXT',
   locale: 'en',
   setLocale: () => {},
 });

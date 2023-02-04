@@ -1,26 +1,7 @@
 import axios from 'axios';
 import { StoreKey } from 'types';
 import user from './user';
-import refundAccount from './refundAccount';
-import delivery from './delivery';
 import artist from './artist';
-import artistNote from './artistNote';
-import likingNote from './likingNote';
-import artistNoteComment from './artistNoteComment';
-import cart from './cart';
-import collection from './collection';
-import customerService from './customerService';
-import follow from './follow';
-import likingComment from './likingComment';
-import likingProduct from './likingProduct';
-import notification from './notification';
-import order from './order';
-import orderCanceled from './orderCanceled';
-import product from './product';
-import productInquery from './productInquery';
-import productTag from './productTag';
-import purchasedReview from './purchasedReview';
-import review from './review';
 
 const request = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BACKEND_API,
@@ -59,26 +40,7 @@ const upload = async (value): Promise<any> => {
 const apis = {
   user,
   upload,
-  delivery,
-  refundAccount,
   artist,
-  artistNote,
-  likingNote,
-  artistNoteComment,
-  cart,
-  collection,
-  customerService,
-  follow,
-  likingComment,
-  likingProduct,
-  notification,
-  order,
-  orderCanceled,
-  product,
-  productInquery,
-  productTag,
-  purchasedReview,
-  review,
 };
 
 export { apis, getJwt, request };
