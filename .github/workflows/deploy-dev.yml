@@ -26,8 +26,6 @@ jobs:
 
       - name: npm install, build, export and deploy
         run: |
-          export NODE_ENV=production
-          export APP_ENV=staging
           echo $NODE_ENV
           echo $APP_ENV
           npm install
