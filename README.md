@@ -1,44 +1,14 @@
-# Next.js with TypeScript example
+Static 클라이언트 CICD 구성 방법
 
-## How to use
-
-Download the example [or clone the repo](https://github.com/mui/material-ui):
-
-<!-- #default-branch-switch -->
-
-```sh
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs-with-typescript
-cd nextjs-with-typescript
-```
-
-Install it and run:
-
-```sh
-npm install
-npm run dev
-```
-
-or:
-
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/nextjs-with-typescript)
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/nextjs-with-typescript)
-
-## The idea behind the example
-
-The project uses [Next.js](https://github.com/vercel/next.js), which is a framework for server-rendered React apps.
-It includes `@mui/material` and its peer dependencies, including `emotion`, the default style engine in MUI v5. If you prefer, you can [use styled-components instead](https://mui.com/material-ui/guides/interoperability/#styled-components).
-
-## The link component
-
-The [example folder](https://github.com/mui/material-ui/tree/HEAD/examples/nextjs-with-typescript) provides an adapter for the use of [Next.js's Link component](https://nextjs.org/docs/api-reference/next/link) with MUI.
-More information [in the documentation](https://mui.com/material-ui/guides/routing/#next-js).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+1. 스태틱 빌드 스크립트 완료
+2. AWS CLI 토큰 발급
+3. 깃허브 액션에서 키 등록 * AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+5. S3 생성 - ACL 하지 않고, Public 허용
+6. 권한에서 퍼블릭 권한 세팅
+7. 웹 도메인으로 띄우는 것 켜기
+8. Route 53 도메인 발급
+9. 인증서 발급
+8. CloudFront 생성, https 인증서 적용하고 S3 도메인 바라보도록 세팅
+9. rooute 53에서 cloudfront 바라보도록 세팅
+10. 도메인으로 접속
+11. push 후 자동 배포 확인
